@@ -143,24 +143,29 @@
 
     @media (max-width: 1100px) {
       .promo-container {
-        display: block; /* Switch from grid to block for absolute safety */
+        display: block !important;
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0;
-        padding: 0;
+        margin: 0 !important;
+        padding: 0 !important;
       }
       .promo-hero {
-        padding: 2rem 0.5rem 4rem;
+        padding: 2.5rem 6px 4rem !important; /* Tight side padding */
         width: 100% !important;
+        max-width: 100% !important;
         overflow-x: hidden !important;
+        display: block !important;
       }
       .promo-left, .promo-form-wrapper, .proof-column { 
         width: 100% !important; 
         max-width: 100% !important;
         box-sizing: border-box !important; 
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem !important;
+        display: block !important;
       }
-      .promo-form-wrapper { padding: 1.5rem 0.75rem !important; }
+      .promo-form-wrapper { padding: 1.5rem 10px !important; }
+      .form-row { display: block !important; width: 100% !important; }
+      .form-group { width: 100% !important; margin-bottom: 1.25rem !important; }
     }
 
     @media (max-width: 600px) {
