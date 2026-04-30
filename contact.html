@@ -115,7 +115,7 @@
       <div>
         <span class="section-label">Send a Message</span>
         <h2 style="margin-bottom:1.5rem;">Estimate Request Form</h2>
-        <form class="contact-form" id="contact-form" name="estimate-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <form class="contact-form" id="contact-form" name="estimate-request" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="estimate-request">
           <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
           <div class="form-row">
@@ -148,6 +148,9 @@
           <div class="form-group">
             <label for="project">Tell Us About Your Project</label>
             <textarea id="project" name="project" placeholder="e.g., Kitchen countertop replacement, approximately 40 sq ft, looking for a dark granite..."></textarea>
+          </div>
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <div data-netlify-recaptcha="true"></div>
           </div>
           <div class="form-submit">
             <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">Send My Estimate Request</button>

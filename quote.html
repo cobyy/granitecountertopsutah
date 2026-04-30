@@ -253,7 +253,7 @@
       <!-- COLUMN 2: THE FORM (CENTERED) -->
       <div class="promo-form-wrapper" style="overflow:hidden !important; min-width:0 !important; max-width:100% !important; width:100% !important; box-sizing:border-box !important;">
         <h2 style="margin-bottom:1.5rem; text-align:center;">Request Your Estimate</h2>
-        <form id="contact-form" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+        <form id="contact-form" name="quote" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
           <input type="hidden" name="form-name" value="quote" />
           <p class="hidden" style="display:none;">
             <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
@@ -291,6 +291,9 @@
           <div class="form-group">
             <label for="plans">Upload any plans or drawings</label>
             <input type="file" id="plans" name="plans_upload" accept=".pdf,.jpg,.jpeg,.png">
+          </div>
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <div data-netlify-recaptcha="true"></div>
           </div>
           <div class="form-submit">
             <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;font-size:1rem;">Send My Request</button>
