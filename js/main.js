@@ -107,6 +107,18 @@ if (galleryContainer && loadMoreBtn && typeof portfolioImages !== 'undefined') {
   let currentBatch = 0;
   const batchSize = 12;
 
+  // Rotate through descriptive alt texts to avoid 136 identical alts
+  const galleryAltTexts = [
+    'Granite kitchen countertop installation Utah',
+    'Custom quartz countertop Utah home',
+    'Stone vanity top installation Salt Lake County',
+    'Kitchen island granite countertop Utah',
+    'Marble countertop bathroom vanity Utah',
+    'Custom stone countertop fabrication Wasatch Front',
+    'Quartzite kitchen countertop installation Utah',
+    'Granite countertop with undermount sink Utah',
+  ];
+
   function loadNextBatch() {
     const start = currentBatch * batchSize;
     const end = start + batchSize;
@@ -114,7 +126,7 @@ if (galleryContainer && loadMoreBtn && typeof portfolioImages !== 'undefined') {
 
     if (imagesToLoad.length === 0) return;
 
-    imagesToLoad.forEach(imgName => {
+    imagesToLoad.forEach((imgName, idx) => {
       const item = document.createElement('div');
       item.className = 'gallery-page-item';
       item.dataset.lightbox = `images/portfolio/${imgName}`;
@@ -122,7 +134,8 @@ if (galleryContainer && loadMoreBtn && typeof portfolioImages !== 'undefined') {
       const img = document.createElement('img');
       img.src = `images/portfolio/${imgName}`;
       img.loading = 'lazy';
-      img.alt = 'Granite countertop installation Utah';
+      const altIdx = (start + idx) % galleryAltTexts.length;
+      img.alt = galleryAltTexts[altIdx];
 
       item.appendChild(img);
       galleryContainer.appendChild(item);
