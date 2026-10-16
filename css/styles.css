@@ -5,40 +5,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Colors (Luxury Charcoal & Warm Brass Palette) */
-  --stone-900:  #121214; /* Extremely dark charcoal */
-  --stone-800:  #1e1e24; /* Deep charcoal */
-  --stone-700:  #2a2a30;
-  --stone-600:  #404046; 
-  --stone-500:  #6b6b72;
-  --stone-400:  #94949b;
-  --stone-300:  #c7c7cc;
-  --stone-200:  #e6e6e9; /* Light ash border */
-  --stone-100:  #f3f3f5; /* Light ash background */
-  --stone-50:   #fafafa; /* Crisp cool white */
+  /* Colors — Option A: Warm Architectural Stone & Aged Bronze */
+  --stone-900:  #1C1B19; /* Deep Espresso-Charcoal / Soapstone */
+  --stone-800:  #262421; /* Warm Dark Slate */
+  --stone-700:  #383530; /* Warm Charcoal */
+  --stone-600:  #524E48; /* Deep Taupe-Grey */
+  --stone-500:  #736E66; /* Muted Stone */
+  --stone-400:  #9E988E; /* Warm Pewter */
+  --stone-300:  #CDC7BD; /* Light Travertine */
+  --stone-200:  #E6E1D8; /* Warm Hairline Limestone Border */
+  --stone-100:  #F2EFE9; /* Soft Limestone Background */
+  --stone-50:   #FAF8F5; /* Warm Alabaster / Chalk */
 
-  --gold-700:   #8a7122; /* Darkest button state */
-  --gold-600:   #a88a29; /* Hover gold */
-  --gold-500:   #c5a059; /* Warm brass/gold */
-  --gold-400:   #d4af37; /* Bright gold accent */
-  --gold-100:   #fcf9e8; /* Warm light bg */
+  --gold-700:   #7A5C35; /* Deep Burnished Bronze (active/hover) */
+  --gold-600:   #8F6D42; /* Rich Aged Bronze */
+  --gold-500:   #A68254; /* Brushed Architectural Bronze / Warm Brass */
+  --gold-400:   #C29E6E; /* Warm Champagne-Bronze Accent */
+  --gold-100:   #F6F1E8; /* Soft Parchment / Warm Tint */
 
-  --white:      #ffffff;
-  --text-dark:  #1e1e24;
-  --text-mid:   #404046;
-  --text-light: #6b6b72;
+  --white:      #FFFFFF;
+  --text-dark:  #1C1B19;
+  --text-mid:   #45413C;
+  --text-light: #6E6961;
 
   /* Typography */
-  --font-serif: 'Montserrat', system-ui, sans-serif; /* Overriding serif with Montserrat per request */
+  --font-serif: 'Montserrat', system-ui, sans-serif;
   --font-sans:  'Inter', system-ui, sans-serif;
 
   /* Spacing */
   --section-pad: clamp(40px, 8vw, 100px);
 
   /* Shadows */
-  --shadow-sm:  0 1px 3px rgba(0,0,0,0.1);
-  --shadow-md:  0 4px 16px rgba(0,0,0,0.12);
-  --shadow-lg:  0 8px 32px rgba(0,0,0,0.18);
+  --shadow-sm:  0 1px 3px rgba(28, 27, 25, 0.06);
+  --shadow-md:  0 6px 20px rgba(28, 27, 25, 0.09);
+  --shadow-lg:  0 12px 34px rgba(28, 27, 25, 0.13);
 
   /* Border radius */
   --radius-sm:  4px;
@@ -83,7 +83,7 @@ p  { color: var(--text-mid); line-height: 1.75; overflow-wrap: break-word; }
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold-500);
+  color: var(--gold-600);
   display: block;
   margin-bottom: 0.65rem;
 }
@@ -118,12 +118,12 @@ section { padding: var(--section-pad) 0; }
 .btn-primary {
   background: var(--gold-500);
   color: var(--white);
-  box-shadow: 0 2px 8px rgba(197, 160, 89, 0.22);
+  box-shadow: 0 2px 8px rgba(166, 130, 84, 0.22);
 }
 .btn-primary:hover {
   background: var(--gold-700);
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(138, 113, 34, 0.28);
+  box-shadow: 0 6px 18px rgba(122, 92, 53, 0.28);
 }
 
 .btn-phone {
@@ -165,16 +165,16 @@ section { padding: var(--section-pad) 0; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(250, 250, 250, 0.88);
+  background: rgba(250, 248, 245, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(230, 230, 233, 0.7);
+  border-bottom: 1px solid rgba(230, 225, 216, 0.85);
   transition: all 0.3s ease;
 }
 #site-header.scrolled {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.95);
   border-bottom-color: var(--stone-200);
-  box-shadow: 0 4px 24px rgba(18, 18, 20, 0.05);
+  box-shadow: 0 4px 24px rgba(28, 27, 25, 0.05);
 }
 .nav-inner {
   display: flex;
