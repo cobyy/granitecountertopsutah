@@ -6,6 +6,21 @@ if (header) {
   });
 }
 
+// ─── Local Dev Clean-URL Support ─────────────────
+// Netlify serves extensionless URLs natively, but simple local servers
+// (like python -m http.server or file://) require .html extensions.
+if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+  document.querySelectorAll('a[href^="/"]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === '/') {
+      link.setAttribute('href', 'index.html');
+    } else if (!href.includes('.') && !href.startsWith('//')) {
+      const [path, hash] = href.slice(1).split('#');
+      link.setAttribute('href', `${path}.html${hash ? '#' + hash : ''}`);
+    }
+  });
+}
+
 // ─── Mobile Nav ──────────────────────────────────
 const hamburger = document.getElementById('nav-hamburger');
 const mobileNav = document.getElementById('mobile-nav');
@@ -107,16 +122,20 @@ if (galleryContainer && loadMoreBtn && typeof portfolioImages !== 'undefined') {
   let currentBatch = 0;
   const batchSize = 12;
 
-  // Rotate through descriptive alt texts to avoid 136 identical alts
+  // Rotate through descriptive alt texts to avoid identical alts across the gallery
   const galleryAltTexts = [
-    'Granite kitchen countertop installation Utah',
-    'Custom quartz countertop Utah home',
-    'Stone vanity top installation Salt Lake County',
-    'Kitchen island granite countertop Utah',
-    'Marble countertop bathroom vanity Utah',
-    'Custom stone countertop fabrication Wasatch Front',
-    'Quartzite kitchen countertop installation Utah',
-    'Granite countertop with undermount sink Utah',
+    'Custom polished granite kitchen island countertop with undermount sink installed in Salt Lake City, Utah',
+    'Honed Carrara marble kitchen island and full-height backsplash with mitered edge in Draper, Utah',
+    'Custom Calacatta marble double-sink master bathroom vanity countertop installed in Sandy, Utah',
+    'Exotic natural granite kitchen island with eased edge profile fabricated and installed in Provo, Utah',
+    'Bookmatched Taj Mahal quartzite waterfall island countertop installed in Park City, Utah',
+    'Custom leathered granite perimeter kitchen countertops and island installed in Lehi, Utah',
+    'Custom honed marble fireplace surround and hearth fabricated in Deer Valley, Utah',
+    'White quartz kitchen countertop with stainless undermount sink cutout installed in Orem, Utah',
+    'Custom granite kitchen peninsula with bullnose edge profile installed in Holladay, Utah',
+    'Natural Statuario marble bathroom vanity and tub surround installed in Alpine, Utah',
+    'Custom granite outdoor kitchen countertop and bar top installed in South Jordan, Utah',
+    'Seamless granite kitchen island slab installation by Howard Gerstner in Salt Lake County, Utah',
   ];
 
   function loadNextBatch() {

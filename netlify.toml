@@ -1,9 +1,106 @@
 # Netlify Configuration for granitecountertopsutah.com
 
+[build.processing]
+  skip_processing = false
+[build.processing.html]
+  pretty_urls = true
+
 # Redirect www to apex domain (canonical host)
 [[redirects]]
   from = "https://www.granitecountertopsutah.com/*"
   to = "https://granitecountertopsutah.com/:splat"
+  status = 301
+  force = true
+
+# Redirect /index.html to root canonical
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+# 301 Redirect legacy .html URLs to clean extensionless URLs
+[[redirects]]
+  from = "/granite-countertops-utah.html"
+  to = "/granite-countertops-utah"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/marble-countertops-utah.html"
+  to = "/marble-countertops-utah"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/quartzite-countertops-utah.html"
+  to = "/quartzite-countertops-utah"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/quartz-countertops-utah.html"
+  to = "/quartz-countertops-utah"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/park-city-deer-valley-countertops.html"
+  to = "/park-city-deer-valley-countertops"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services.html"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/service-areas.html"
+  to = "/service-areas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gallery.html"
+  to = "/gallery"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/portfolio.html"
+  to = "/portfolio"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/choosing-your-stone.html"
+  to = "/choosing-your-stone"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq.html"
+  to = "/faq"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/quote.html"
+  to = "/quote"
   status = 301
   force = true
 
